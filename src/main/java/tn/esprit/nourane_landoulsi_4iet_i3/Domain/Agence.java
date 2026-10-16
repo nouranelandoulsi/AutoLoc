@@ -22,5 +22,11 @@ public class Agence {
     String adresse;
     String telephone;
 
+    @OneToMany(mappedBy = "agence", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    List<Employe> employes;
 
+    @OneToMany(mappedBy = "agence", cascade = CascadeType.ALL)
+    @ToString.Exclude
+    List<Vehicule> vehicules;
 }

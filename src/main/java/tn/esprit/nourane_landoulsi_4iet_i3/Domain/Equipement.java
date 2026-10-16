@@ -19,6 +19,7 @@ public class Equipement {
     Long idEquipement;
     String libelle;
 
-
-
+    @ManyToMany(mappedBy = "equipements")
+    @ToString.Exclude
+    List<Vehicule> vehicules;
 }

@@ -25,5 +25,7 @@ public class Client {
     String numPermis;
     LocalDate dateInscription;
 
-
+    @OneToMany(mappedBy = "client")
+    @ToString.Exclude
+    List<Reservation> reservations;
 }

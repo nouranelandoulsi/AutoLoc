@@ -23,5 +23,11 @@ public class Contrat {
     BigDecimal montantTotal;
     boolean valide;
 
+    @OneToOne
+    @JoinColumn(name = "id_reservation", unique = true)
+    Reservation reservation;
 
-    }
+    @OneToMany(mappedBy = "contrat", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ToString.Exclude
+    List<Paiement> paiements;
+}
